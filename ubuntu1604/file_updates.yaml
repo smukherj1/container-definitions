@@ -25,10 +25,25 @@
 - triggerFile:
     target: "//:debs.tar"
     bucket: "container-deps"
-    dir: "ubuntu1604/debs"
+    dir: "suvanjan-test/ubuntu1604/debs1"
+    metadata:
+        target: "//:mock_regular_update.yaml"
+        GCS:
+            bucket: "container-deps"
+            object: "suvanjan-test/ubuntu1604/debs1/metadata.yaml"
+
+- triggerFile:
+    target: "//:debs.tar"
+    bucket: "container-deps"
+    dir: "suvanjan-test/ubuntu1604/debs2"
+    metadata:
+        target: "//:mock_cve_fix.yaml"
+        GCS:
+            bucket: "container-deps"
+            object: "suvanjan-test/ubuntu1604/debs2/metadata.yaml"
 
 # Ubuntu1604 base image tarball.
 - triggerFile:
     target: "@ubuntu1604_tar_latest//file:ubuntu1604.tar.gz"
     bucket: "container-deps"
-    dir: "ubuntu1604/tar"
+    dir: "suvanjan-test/ubuntu1604/tar"

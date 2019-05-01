@@ -1,0 +1,18 @@
+# TODO (svanjan): Remove this file when we have the ability to generate it
+# automatically.
+
+# Mock file to tag an update to a tarball of debian packages indicating that
+# it has fixes to critical CVE vulnerabilities.
+tags:
+    - CVECritical
+
+# List the packages included in :debs with made up version numbers.
+packages:
+  - name: ca-certificates
+    version: 1.0
+  - name: curl
+    version: 2.0
+  - name: libc-bin
+    version: 3.0
+  - name: netbase
+    version: 4.0

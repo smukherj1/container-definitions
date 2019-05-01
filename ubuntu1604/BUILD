@@ -46,6 +46,25 @@ download_pkgs(
     ],
 )
 
+# Mock targets to generate YAML metadata file about ":debs indicating whether or
+# not it has a fix for a security vulnerability.
+# TODO (suvanjan): Remove these once download_pkgs has the ability to generate
+# the metadata.
+genrule(
+    name = "mock_cve_fix",
+    outs = ["mock_cve_fix.yaml"],
+    srcs = [":mock_cve_fix_src.yaml"],
+    cmd = "cp $(location :mock_cve_fix_src.yaml) $@",
+)
+
+genrule(
+    name = "mock_regular_update",
+    outs = ["mock_regular_update.yaml"],
+    srcs = [":mock_regular_update_src.yaml"],
+    cmd = "cp $(location :mock_regular_update_src.yaml) $@",
+)
+
+
 # Generate the container.
 toolchain_container(
     name = "image",
