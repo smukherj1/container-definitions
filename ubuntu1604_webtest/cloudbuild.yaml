@@ -49,7 +49,7 @@ steps:
     # This is needed for GCB to correctly build/test targets in the Bazel project.
     dir: "ubuntu1604_webtest"
     id: "repro-test"
-    waitFor: ["version"]
+    waitFor: ["version", "structure-test"]
 
 # Step: tag the image, first as the backup image.
   - name: "l.gcr.io/google/bazel"

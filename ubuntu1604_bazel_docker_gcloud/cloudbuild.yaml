@@ -60,7 +60,7 @@ steps:
     # This is needed for GCB to correctly build/test targets in the Bazel project.
     dir: "ubuntu1604_bazel_docker_gcloud"
     id: "repro-test"
-    waitFor: ["version"]
+    waitFor: ["version", "structure-test"]
 
 # Step: `bazel build` the testing project in the new container.
   - name: "bazel:image"
